@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+@view-transition {
+  navigation: auto; /* Enables transition on normal page clicks */
+}
+
+/* Optional: Customize the fade duration */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+}
+
+.form-section {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(58, 35, 15, 0.35) 10%,
+    rgba(35, 20, 10, 0.2) 45%,
+    rgba(10, 8, 8, 0.1) 70%,
+    #000 100%
+  );
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-details-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  width: 35%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-details-parent-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 60%;
+}
+
+.form.select-tier-plan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 70%;
+}
+
+.section-heading-txt {
+  font-family: "Cormorant Garamond", serif;
+  color: #b88746;
+  letter-spacing: 2px;
+  margin: 0;
+  font-size: clamp(14px, 1.25vw + 0.85rem, 35px);
+}
+
+.email-input,
+.password-input,
+.confirm-password-input {
+  border-radius: 5px;
+  width: 100%;
+  height: 25px;
+  background-color: #e1dcc9;
+  outline: none;
+  border: none;
+  color: #1f150c;
+}
+.plan-card-label {
+  background: #080808;
+  border: 1px solid rgba(184, 135, 70, 0.28);
+  border-radius: 20px;
+  overflow: hidden;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  padding: 5px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.plan-card-label:hover {
+  border-color: rgba(184, 135, 70, 0.65);
+}
+.plan-card-label.active {
+  box-shadow: 0 8px 30px rgba(184, 135, 70, 0.07);
+  border-color: #1b263b;
+}
+
+.tier-badge {
+  border-radius: 50%;
+  border: 1px solid #b88746;
+  background: rgba(184, 135, 70, 0.1);
+  color: #d6b477;
+  padding: 7px 10px;
+  margin: 0;
+}
+
+.tier-badge.silver {
+  color: #d1d1d1;
+  border-color: #929292;
+  background: rgba(192, 192, 192, 0.08);
+}
+
+.tier-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: auto;
+}
+.tier-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(20px, 1.8vw + 1rem, 26px);
+  font-weight: 600;
+  white-space: nowrap;
+  margin: 0;
+  color: #b8a98f;
+}
+
+.tier-label {
+  border: 1px solid rgba(184, 135, 70, 0.22);
+  border-radius: 20px;
+  padding: 7px 15px;
+  color: #b8a98f;
+  font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.tier-rate {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.rate-label {
+  color: #8e8473;
+  font-size: clamp(9px, 0.8vw + 0.6rem, 11px);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  margin: 0;
+}
+.rate-value {
+  background: rgba(184, 135, 70, 0.14);
+  border: 1px solid rgba(184, 135, 70, 0.18);
+  border-radius: 30px;
+  color: #d6b477;
+  padding: 9px 17px;
+  font-size: clamp(14px, 0.8vw + 0.6rem, 16px);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.submit-details-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-details-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #120b08;
+  border: 1px solid rgba(214, 194, 158, 0.25);
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.submit-details-btn:hover {
+  background-color: #080808;
+  cursor: pointer;
+}
+
+.submit-btn-txt {
+  margin: 0;
+  padding: 7px 15px;
+  font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
+  font-family: "Cormorant Garamond", serif;
+  color: #b88746;
+  font-weight: bold;
+}
+
+.change-of-action-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.change-of-action-txt {
+  font-family: "Teachers", sans-serif;
+  font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
+}
+
+.change-of-action-link {
+  font-family: "Cormorant Garamond", serif;
+  text-decoration: none;
+  color: #b88746;
+}
+
+.change-of-action-link:hover {
+  color: #e1dcc9;
+  transition: color 0.5s ease;
+}
+
+@media (max-width: 1000px) {
+  .user-details-container {
+    width: 70%;
+  }
+  .form {
+    width: 70%;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .user-details-container {
+    width: 80%;
+  }
+}

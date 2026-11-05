@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White Core | Register page</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/user-entrance.css" />
+  </head>
+
+  <body>
+    <section class="form-section">
+      <div class="user-details-container">
+        <div class="user-details-container-heading">
+          <h1 class="section-heading-txt">Register</h1>
+        </div>
+
+        <div class="user-details-parent-container">
+          <form class="form" action="/user-details" method="POST">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              class="email-input"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="password-input"
+              required
+            />
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              class="confirm-password-input"
+              required
+            />
+
+            <div class="submit-details-btn-container">
+              <button type="submit" class="submit-details-btn">
+                <p class="submit-btn-txt">Submit</p>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="change-of-action-container">
+          <p class="change-of-action-text">
+            Already registered?
+            <span>
+              <a
+                href="http://localhost:3000/login"
+                class="change-of-action-link"
+                >Login
+              </a></span
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

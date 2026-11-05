@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White Core | select tier plan page</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/user-entrance.css" />
+  </head>
+
+  <body>
+    <section class="form-section">
+      <div class="user-details-container">
+        <div class="user-details-container-heading">
+          <h1 class="section-heading-txt">Select Tier Plan</h1>
+        </div>
+
+        <div class="user-details-parent-container">
+          <form
+            class="form select-tier-plan-form"
+            action="/selected-tier-plan"
+            method="POST"
+          >
+            <label class="plan-card-label">
+              <input
+                type="radio"
+                name="tier"
+                value="tier1"
+                class="tier-radio-input"
+              />
+              <p class="tier-badge">★</p>
+
+              <div class="tier-heading">
+                <p class="tier-label">Member</p>
+              </div>
+
+              <div class="tier-rate">
+                <p class="rate-value">60%</p>
+              </div>
+            </label>
+
+            <label class="plan-card-label">
+              <input
+                type="radio"
+                name="tier"
+                value="tier1"
+                class="tier-radio-input"
+              />
+
+              <p class="tier-badge silver">♛</p>
+              <div class="tier-heading">
+                <p class="tier-label">Silver</p>
+              </div>
+              <div class="tier-rate">
+                <p class="rate-value">70%</p>
+              </div>
+            </label>
+
+            <div class="submit-details-btn-container">
+              <button type="submit" class="submit-details-btn">
+                <p class="submit-btn-txt">Submit</p>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/select-tier-plan.js"></script>
+  </body>
+</html>
