@@ -29,32 +29,48 @@ var moreOptions = document.querySelectorAll(".more-options-container");
 var actionContainer = document.querySelector(".action-container");
 var exitBtn = document.querySelector(".exit-btn");
 var actionContents = document.querySelectorAll(".action-content-container");
-
+const copyLink = document.querySelector(".copyLink");
+const linkTxt = document.querySelector(".refLink").textContent;
+const copyRefCode = document.querySelector(".copyCode");
+const refCodeText = document.querySelector(".refCode").textContent;
 moreOptions.forEach((option, index) => {
-  option.addEventListener("click", () => {
-    actionContainer.classList.add("show");
+  option.addEventListener("click", async () => {
     switch (index) {
       case 0:
+        actionContainer.classList.add("show");
         actionContents.forEach((content) => {
           content.classList.remove("show");
         });
         document.querySelector(".withdraw").classList.add("show");
         break;
       case 1:
+        actionContainer.classList.add("show");
         actionContents.forEach((content) => {
           content.classList.remove("show");
         });
         document.querySelector(".referral-table").classList.add("show");
         break;
       case 2:
-        actionContents.forEach((content) => {
-          content.classList.remove("show");
-        });
+        try {
+          await navigator.clipboard.writeText(linkTxt);
+          copyLink.textContent = "Copied";
+          setTimeout(() => {
+            copyLink.textContent = "Copy";
+          }, 2000);
+        } catch (err) {
+          fallbackCopyText(linkTxt);
+        }
         break;
       case 3:
-        actionContents.forEach((content) => {
-          content.classList.remove("show");
-        });
+        try {
+          await navigator.clipboard.writeText(refCodeText);
+          copyRefCode.textContent = "Copied";
+          setTimeout(() => {
+            copyRefCode.textContent = "Copy";
+          }, 2000);
+        } catch (err) {
+          fallbackCopyText(refCodeText);
+        }
         break;
     }
   });
@@ -62,4 +78,7 @@ moreOptions.forEach((option, index) => {
 
 exitBtn.addEventListener("click", () => {
   actionContainer.classList.remove("show");
+  actionContents.forEach((content) => {
+    content.classList.remove("show");
+  });
 });
