@@ -1,3 +1,8 @@
+html {
+  scrollbar-color: rgba(255, 255, 255, 0.05) #000000;
+  /* scrollbar-width: thin; */
+}
+
 body {
   background-color: black;
   margin: 0;
@@ -264,7 +269,6 @@ body {
 }
 
 .league-text-container {
-  width: 100%;
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -352,13 +356,11 @@ body {
   height: auto;
 }
 
-.bal-text,
-.referral-count-text {
+.numerical-digits {
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
   font-size: clamp(21px, 2vw + 1rem, 28px);
   font-weight: 650;
-  line-height: 32px;
   margin: 0;
   color: #b88746;
 }
@@ -418,7 +420,7 @@ body {
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
   color: #b8a98f;
-  font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
+  font-size: clamp(10px, 0.8vw + 0.6rem, 12px);
 }
 
 .leadership-board-container {
@@ -826,9 +828,158 @@ body {
   cursor: pointer;
 }
 
+.action-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.action-container.show {
+  display: flex;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.exit-btn {
+  background-color: #080808;
+  border: 1px rgba(214, 194, 158, 0.25) solid;
+  border-radius: 50%;
+  padding: 10px 15px;
+  margin: 0;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.exit-btn:hover {
+  background-color: #1b263b;
+  cursor: pointer;
+}
+
+.action-content-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 40%;
+  height: 60%;
+  display: none;
+  flex-direction: column;
+  padding: 50px;
+  justify-content: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.withdraw.show,
+.referral-table.show {
+  display: flex;
+}
+
+.section-heading-txt {
+  font-family: "Cormorant Garamond", serif;
+  color: white;
+  letter-spacing: 2px;
+  margin: 0;
+  font-size: clamp(14px, 1.25vw + 0.85rem, 35px);
+}
+
+.micro-heading-txt {
+  font-family: "Teachers", sans-serif;
+  color: #b8a98f;
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: clamp(13px, 1.25vw + 0.85rem, 15px);
+}
+
+.sub-txt {
+  font-family: "Teachers", sans-serif;
+  color: #cacaca;
+  font-size: clamp(11px, 1vw + 0.8rem, 13px);
+  margin: 0;
+}
+
+.action-input-form {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+
+.action-input {
+  background: #080808;
+  border: 1px solid rgba(184, 135, 70, 0.28);
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  padding: 10px;
+  max-width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+.action-input:hover {
+  border-color: rgba(184, 135, 70, 0.65);
+}
+
+.submit-details-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #120b08;
+  border: 1px solid rgba(214, 194, 158, 0.25);
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.submit-details-btn:hover {
+  background-color: #080808;
+  cursor: pointer;
+}
+
+.submit-btn-txt {
+  margin: 0;
+  padding: 7px 15px;
+  font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
+  font-family: "Cormorant Garamond", serif;
+  color: #b88746;
+  font-weight: bold;
+}
+
+.referral-table-container {
+  height: 150px;
+  padding: 20px 0;
+  width: 522px;
+  background-color: #000000;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.ref-table-headings {
+  display: flex;
+  justify-content: space-around;
+}
+
 @media (max-width: 498px) {
   .referral-options-container {
     width: 100%;
+  }
+  .action-input-form {
+    gap: 1rem;
   }
 }
 

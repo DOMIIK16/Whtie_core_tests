@@ -53,17 +53,26 @@
       <div class="dashboard-section">
         <section class="first-section-content-parent">
           <div class="personal-info-container">
-            <p class="tier-badge">★</p>
+<% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
+    <p class="tier-badge">★</p>
+<% } else if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
+    <p class="tier-badge silver">♛</p>
+<% } %>
 
             <article class="personal-info-text-container">
-              <h1 class="header-text">User name</h1>
+              <h1 class="header-text"><%=currentUser.username%></h1>
 
               <div class="league-text-container">
-                <p class="tier-label">Member</p>
+                <p class="tier-label"><%= currentUser.tier_plan%></p>
               </div>
 
               <p class="ref-points-to-go-texts">
-                You can earn 60% of your referral's registration fee.
+                You can earn <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
+    60%
+<% } if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
+    70%
+<% } %>
+ of your referral's registration fee.
               </p>
             </article>
           </div>
@@ -83,7 +92,7 @@
                     />
                   </div>
 
-                  <p class="bal-text">0.00</p>
+                  <p class="numerical-digits">0.00</p>
                 </div>
                 <div class="more-options-container">
                   <p class="more-options-txt">Withdraw</p>
@@ -105,7 +114,7 @@
                     />
                   </div>
 
-                  <p class="referral-count-text">0</p>
+                  <p class="numerical-digits">0</p>
                 </div>
                 <div class="more-options-container">
                   <p class="more-options-txt">View</p>
@@ -123,7 +132,9 @@
               </div>
 
               <div class="referral-method-txt-container">
-                <p class="referral-method-txt">Lorem ipsum</p>
+                <p class="referral-method-txt">
+                  https://locahost:3000<%= currentUser.referral_code%>
+                </p>
               </div>
 
               <div class="more-options-container">
@@ -138,7 +149,9 @@
               </div>
 
               <div class="referral-method-txt-container">
-                <p class="referral-method-txt">lorem-ipsum</p>
+                <p class="referral-method-txt">
+                  <%= currentUser.referral_code%>
+                </p>
               </div>
 
               <div class="more-options-container">
@@ -154,7 +167,10 @@
               </div>
 
               <div class="referral-method-txt-container">
-                <p class="referral-method-txt">lorem-ipsum</p>
+                <p class="referral-method-txt">
+                  Join me at white core, referral code: <%=
+                  currentUser.referral_code%>
+                </p>
               </div>
 
               <div class="more-options-container">
@@ -167,6 +183,43 @@
         <section class="leadership-board-container">
           <div class="leadershipboard-box"></div>
         </section>
+      </div>
+    </section>
+
+    <section class="action-container">
+      <p class="exit-btn"> X </p>
+      <div class="action-content-container withdraw">
+        <h1 class="section-heading-txt">Ready for a pay check?</h1>
+        <p class="micro-heading-txt">Available bal: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
+        <form action="" class="action-input-form" method="post">
+              <input
+                type="text"
+                name="withrawal-amount"
+                class="action-input"
+                placeholder="Amount"
+              />
+
+               <button type="submit" class="submit-details-btn">
+                <p class="submit-btn-txt">Submit</p>
+              </button>
+                     
+        </form>
+        <p class="sub-txt">
+          Withdral treshold: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> 4000</span>.
+        </p>
+      </div>
+      <div class="action-content-container referral-table">
+        <h1 class="section-heading-txt">This table shows your number of referrals</h1>
+        <p class="micro-heading-txt">Referral count: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
+        <div class="referral-table-container">
+          <div class="ref-table-headings">
+            <p class="sub-txt">Username</p>
+            <p class="sub-txt">Tier-plan</p>
+            <p class="sub-txt">Acc_status</p>
+            <p class="sub-txt">earnings</p>
+          </div>
+          <div class="referral-table"></div>
+        </div>
       </div>
     </section>
 
@@ -184,7 +237,7 @@
                     <p class="info-heading">Username</p>
                   </div>
                   <div class="info-text-container">
-                    <p class="info-text">Domi112</p>
+                    <p class="info-text"><%= currentUser.username%></p>
                   </div>
                   <div class="change-container modify">
                     <p class="change-text">Change</p>
@@ -192,10 +245,10 @@
                 </div>
                 <div class="info-box">
                   <div class="info-heading-container">
-                    <p class="info-heading">Name</p>
+                    <p class="info-heading">Email</p>
                   </div>
                   <div class="info-text-container">
-                    <p class="info-text">Ikwuka Dominion</p>
+                    <p class="info-text"><%= currentUser.email%></p>
                   </div>
                   <div class="change-container modify">
                     <p class="change-text">Change</p>
@@ -205,25 +258,22 @@
               <div class="personal-info-row">
                 <div class="info-box">
                   <p class="info-heading">Tier Plan</p>
-                  <p class="info-text">Tier 2</p>
+                  <p class="info-text"><%= currentUser.tier_plan%></p>
                 </div>
-                <div class="info-box">
-                  <p class="info-heading">Alliance</p>
-                  <p class="info-text">Alliance Name</p>
-                </div>
+               
               </div>
             </div>
-            <div class="profile-picture-parent-container">
-              <div class="user-profile-picture-container">
-                <img
-                  src="../images/profile-icon.png"
-                  alt=""
-                  class="user-profile-picture"
-                />
+            <div class="tier-plan-parent-container">
+        <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
+    <p class="tier-badge">★</p>
+                  <div class="tier-upgrade-container modify">
+                <p class="tier-upgrade-text">Upgrade</p>
               </div>
-              <div class="update-container modify">
-                <p class="update-text">Update</p>
-              </div>
+<% } else if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
+    <p class="tier-badge silver">♛</p>
+<% } %>
+
+
             </div>
           </div>
         </div>
@@ -244,17 +294,7 @@
                 <p class="settings-text">Change Email</p>
               </div>
             </div>
-            <div class="tier-plan-parent-container">
-              <div class="tier-plan-sample-image-container">
-                <img
-                  src="../images/tier-2-silver.png"
-                  class="tier-plan-sample-image"
-                />
-              </div>
-              <div class="tier-upgrade-container modify">
-                <p class="tier-upgrade-text">Upgrade</p>
-              </div>
-            </div>
+            
           </div>
         </div>
         <div class="session-parent-container settings-box">
@@ -293,6 +333,7 @@
         </div>
       </section>
     </section>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/user-page.js"></script>

@@ -323,7 +323,7 @@ body {
 
 .section-heading-txt {
   font-family: "Cormorant Garamond", serif;
-  color: #e1dcc9;
+  color: white;
   letter-spacing: 2px;
   margin: 0;
   font-size: clamp(14px, 1.25vw + 0.85rem, 35px);
