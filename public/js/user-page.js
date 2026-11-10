@@ -33,6 +33,11 @@ const copyLink = document.querySelector(".copyLink");
 const linkTxt = document.querySelector(".refLink").textContent;
 const copyRefCode = document.querySelector(".copyCode");
 const refCodeText = document.querySelector(".refCode").textContent;
+
+const copyInviteTxtBtn = document.querySelector(".copyInviteTxtBtn");
+const inviteContactsTxt =
+  document.querySelector(".inviteContactsTxt").textContent;
+
 moreOptions.forEach((option, index) => {
   option.addEventListener("click", async () => {
     switch (index) {
@@ -70,6 +75,18 @@ moreOptions.forEach((option, index) => {
           }, 2000);
         } catch (err) {
           fallbackCopyText(refCodeText);
+        }
+        break;
+
+      case 4:
+        try {
+          await navigator.clipboard.writeText(inviteContactsTxt);
+          copyInviteTxtBtn.textContent = "Copied";
+          setTimeout(() => {
+            copyInviteTxtBtn.textContent = "Copy";
+          }, 2000);
+        } catch (err) {
+          fallbackCopyText(inviteContactsTxt);
         }
         break;
     }

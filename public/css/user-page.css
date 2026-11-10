@@ -438,11 +438,12 @@ body {
   border: 1px solid rgba(214, 194, 158, 0.25);
 }
 
-.settings-section {
+.settings-parent-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 95%;
+  padding: 30px 0 50px;
 }
 .settings-box {
   width: 80%;
@@ -456,18 +457,13 @@ body {
   align-items: center;
   gap: 2rem;
 }
-.personal-info-parent-container,
-.account-settings-parent-container {
+
+.personal-info-parent-container {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  width: 90%;
+  justify-content: space-around;
 }
 
-.personal-info-content-container {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-}
 .personal-info-content {
   display: flex;
   gap: 1.5rem;
@@ -512,9 +508,14 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.settings-box-header {
-  width: 90%;
+
+.section-heading-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
+
 .change-container {
   display: flex;
   justify-content: center;
@@ -613,16 +614,7 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
-.tier-plan-sample-image-container {
-  width: 65%;
-  height: 55%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.tier-plan-sample-image {
-  width: 60%;
-}
+
 .change-parent-container {
   width: 90%;
 }
@@ -862,13 +854,11 @@ body {
 }
 
 .action-content-container {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background-color: #080808;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   width: 40%;
-  height: 60%;
   display: none;
   flex-direction: column;
   padding: 50px;
@@ -887,7 +877,7 @@ body {
   color: white;
   letter-spacing: 2px;
   margin: 0;
-  font-size: clamp(14px, 1.25vw + 0.85rem, 35px);
+  font-size: clamp(8px, 1vw + 0.75rem, 27px);
 }
 
 .micro-heading-txt {
@@ -912,7 +902,7 @@ body {
 }
 
 .action-input {
-  background: #080808;
+  background: black;
   border: 1px solid rgba(184, 135, 70, 0.28);
   border-radius: 10px;
   overflow: hidden;
@@ -920,7 +910,6 @@ body {
     border-color 0.3s ease,
     box-shadow 0.3s ease;
   padding: 10px;
-  max-width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -939,6 +928,7 @@ body {
   border: 1px solid rgba(214, 194, 158, 0.25);
   border-radius: 20px;
   transition: all 0.5s ease;
+  width: 20%;
 }
 
 .submit-details-btn:hover {
@@ -948,7 +938,7 @@ body {
 
 .submit-btn-txt {
   margin: 0;
-  padding: 7px 15px;
+  padding: 6px 10px;
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
   font-family: "Cormorant Garamond", serif;
   color: #b88746;
@@ -975,12 +965,20 @@ body {
   }
   .action-input-form {
     gap: 1rem;
+    flex-direction: column;
   }
 }
 
 @media (max-width: 680px) {
   .settings-box {
     width: 90%;
+  }
+  .action-input-form {
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .submit-details-btn {
+    width: 40%;
   }
 }
 
@@ -1005,7 +1003,7 @@ body {
   .personal-info-parent-container {
     gap: 2rem;
   }
-  .personal-info-content-container {
+  .personal-info-parent-container {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
@@ -1015,18 +1013,6 @@ body {
   }
   .personal-info-row {
     width: 100%;
-  }
-
-  .account-settings-content-container {
-    flex-direction: column;
-  }
-  .account-settings-container {
-    width: 80%;
-  }
-  .session-content-container {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin: 20px;
   }
   .session-setting,
   .delete-account-container {
@@ -1070,9 +1056,7 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(
-      -10px
-    ); /* Optional: adds a slight downward slide effect */
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
