@@ -1,453 +1,382 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/user-page.css" />
-  </head>
-  <body>
-    <section class="header">
-      <div class="header-content-parent-container">
-        <div class="white-core-heading">
-          <img
-            class="white-core-small-icon drop"
-            src="../images/white-core-small-img.png"
-            alt="White Core Logo"
-          />
-          <h2 class="White-core-heading-text">White Core</h2>
-        </div>
-      </div>
-    </section>
 
-    <div class="side-pane">
-      <div class="dashboard option">
-        <p class="option-text">Dashboard</p>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/user-page.css" />
+</head>
 
-      <div class="settings option">
-        <p class="option-text">Settings</p>
+<body>
+  <section class="header">
+    <div class="header-content-parent-container">
+      <div class="white-core-heading">
+        <img class="white-core-small-icon drop" src="../images/white-core-small-img.png" alt="White Core Logo" />
+        <h2 class="White-core-heading-text">White Core</h2>
       </div>
     </div>
+  </section>
 
-    <section class="dashboard-main page active">
-      <div class="dashboard-section">
-        <section class="first-section-content-parent">
-          <div class="personal-info-container">
-<% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
-    <p class="tier-badge">★</p>
-<% } else if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
-    <p class="tier-badge silver">♛</p>
-<% } %>
+  <div class="side-pane">
+    <div class="dashboard option">
+      <p class="option-text">Dashboard</p>
+    </div>
 
-            <article class="personal-info-text-container">
-              <h1 class="header-text"><%=currentUser.username%></h1>
+    <div class="settings option">
+      <p class="option-text">Settings</p>
+    </div>
+  </div>
 
-              <div class="league-text-container">
-                <p class="tier-label"><%= currentUser.tier_plan%></p>
-              </div>
+  <section class="dashboard-main page active">
+    <div class="dashboard-section">
+      <section class="first-section-content-parent">
+        <div class="personal-info-container">
+          <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
+          <p class="tier-badge">★</p>
+          <% } else if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
+          <p class="tier-badge silver">♛</p>
+          <% } %>
 
-              <p class="ref-points-to-go-texts">
-                You can earn <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
-    60%
-<% } if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
-    70%
-<% } %>
- of your referral's registration fee.
-              </p>
-            </article>
-          </div>
+          <article class="personal-info-text-container">
+            <h1 class="header-text"><%=currentUser.username%></h1>
 
-          <div class="box-container">
-            <div class="box">
-              <div class="box-content-container">
-                <div class="box-heading-container">
-                  <p class="box-heading-texts">Total earnings</p>
-                </div>
-
-                <div class="bal-image-container">
-                  <div class="box-sample-image-contanier">
-                    <img
-                      src="../images/earnings-icon.png"
-                      class="box-sample-image"
-                    />
-                  </div>
-
-                  <p class="numerical-digits">0.00</p>
-                </div>
-                <div class="more-options-container">
-                  <p class="more-options-txt">Withdraw</p>
-                </div>
-              </div>
+            <div class="league-text-container">
+              <p class="tier-label"><%= currentUser.tier_plan%></p>
             </div>
 
-            <div class="box">
-              <div class="box-content-container">
-                <div class="box-heading-container">
-                  <p class="box-heading-texts">Referral Count</p>
-                </div>
-
-                <div class="referral-container-image">
-                  <div class="box-sample-image-contanier">
-                    <img
-                      src="../images/referral-count-icon.png"
-                      class="box-sample-image"
-                    />
-                  </div>
-
-                  <p class="numerical-digits">0</p>
-                </div>
-                <div class="more-options-container">
-                  <p class="more-options-txt">View</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="referral-options-container">
-          <div class="box">
-            <div class="referral-options-container-content">
-              <div class="box-heading-container">
-                <p class="box-heading-texts">Referral link</p>
-              </div>
-
-              <div class="referral-method-txt-container">
-                <p class="referral-method-txt refLink">
-                  https://locahost:3000<%= currentUser.referral_code%>
-                </p>
-              </div>
-
-              <div class="more-options-container">
-                <p class="more-options-txt copyLink">Copy</p>
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="referral-options-container-content">
-              <div class="box-heading-container">
-                <p class="box-heading-texts">Referral Code</p>
-              </div>
-
-              <div class="referral-method-txt-container">
-                <p class="referral-method-txt refCode">
-                  <%= currentUser.referral_code%>
-                </p>
-              </div>
-
-              <div class="more-options-container">
-                <p class="more-options-txt copyCode">Copy</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="referral-options-container-content">
-              <div class="box-heading-container">
-                <p class="box-heading-texts">Invite Contacts</p>
-              </div>
-
-              <div class="referral-method-txt-container">
-                <p class="referral-method-txt inviteContactsTxt">
-                  Join me at white core, referral code: <%=
-                  currentUser.referral_code%>
-                </p>
-              </div>
-
-              <div class="more-options-container">
-                <p class="more-options-txt copyInviteTxtBtn">Copy</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="leadership-board-container">
-          <div class="leadershipboard-box"></div>
-        </section>
-      </div>
-    </section>
-
-    <section class="action-container">
-      <p class="exit-btn"> X </p>
-      <div class="action-content-container withdraw">
-        <h1 class="section-heading-txt">Ready for a pay check?</h1>
-        <p class="micro-heading-txt">Available bal: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
-        <form action="" class="action-input-form" method="post">
-              <input
-                type="text"
-                name="withrawal-amount"
-                class="action-input"
-                placeholder="Amount"
-              />
-
-               <button type="submit" class="submit-details-btn">
-                <p class="submit-btn-txt">Submit</p>
-              </button>
-                     
-        </form>
-        <p class="sub-txt">
-          Withdral treshold: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> 4000</span>.
-        </p>
-      </div>
-      <div class="action-content-container referral-table">
-        <h1 class="section-heading-txt">This table shows your number of referrals</h1>
-        <p class="micro-heading-txt">Referral count: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
-        <div class="referral-table-container">
-          <div class="ref-table-headings">
-            <p class="sub-txt">Username</p>
-            <p class="sub-txt">Tier-plan</p>
-            <p class="sub-txt">Acc_status</p>
-            <p class="sub-txt">earnings</p>
-          </div>
-          <div class="referral-table"></div>
+            <p class="ref-points-to-go-texts">
+              You can earn <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
+              60%
+              <% } if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
+              70%
+              <% } %>
+              of your referral's registration fee.
+            </p>
+          </article>
         </div>
-      </div>
-          <div class="action-content-container change-username">
-        <h1 class="section-heading-txt">Change Username</h1>
-        <form action="" class="action-input-form" method="post">
-              <input
-                type="text"
-                name="withrawal-amount"
-                class="action-input"
-                placeholder="<%= currentUser.username%>"
-              />
 
-               <button type="submit" class="submit-details-btn">
-                <p class="submit-btn-txt">Submit</p>
-              </button>
-                     
-        </form>
-        <p class="sub-txt">
-          Username checker: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> Avaiable</span>.
-        </p>
-      </div>
+        <div class="box-container">
+          <div class="box">
+            <div class="box-content-container">
+              <div class="box-heading-container">
+                <p class="box-heading-texts">Total earnings</p>
+              </div>
 
-       <div class="action-content-container change-display">
-        <h1 class="section-heading-txt">Change Display Name</h1>
-        <form action="" class="action-input-form" method="post">
-              <input
-                type="text"
-                name="withrawal-amount"
-                class="action-input"
-                placeholder="<%= currentUser.username%>"
-              />
+              <div class="bal-image-container">
+                <div class="box-sample-image-contanier">
+                  <img src="../images/earnings-icon.png" class="box-sample-image" />
+                </div>
 
-               <button type="submit" class="submit-details-btn">
-                <p class="submit-btn-txt">Submit</p>
-              </button>
-                     
-        </form>
-        
-      </div>
-      <div class="action-content-container change-password">
-        <h1 class="section-heading-txt">Change Password</h1>
-        <form action="" class="action-input-form" method="post">
-              <input
-                type="text"
-                name="CurrentPassword"
-                class="action-input"
-                placeholder="Current password"
-              />
-              <input
-                type="text"
-                name="NewPassword"
-                class="action-input"
-                placeholder="New password"
-              />
-
-               <button type="submit" class="submit-details-btn">
-                <p class="submit-btn-txt">Submit</p>
-              </button>
-                     
-        </form>
-        
-      </div>
-
-      <div class="action-content-container update-withdrawal-account">
-        <h1 class="section-heading-txt">Change Password</h1>
-        <form action="" class="action-input-form update-withdrawal-account-form" method="post">
-              <input
-                type="text"
-                name="CurrentPassword"
-                class="action-input update-withdrawal-account-input"
-                placeholder="Current password"
-              />
-              <input
-                type="text"
-                name="WithdrawalAccountNumber"
-                class="action-input update-withdrawal-account-input"
-                placeholder="Account Number"
-              />
-
-              <input
-                type="text"
-                name="WithdrawalAccountName"
-                class="action-input update-withdrawal-account-input"
-                placeholder="Account Name"
-              />
-              <input
-                type="text"
-                name="WithdrawalAccountBankName"
-                class="action-input update-withdrawal-account-input"
-                placeholder="Bank Name"
-              />
-               <button type="submit" class="submit-details-btn">
-                <p class="submit-btn-txt">Submit</p>
-              </button>
-                     
-        </form>
-        
-      </div>
-
-      <div class="action-content-container update-pin">
-        <h1 class="section-heading-txt">Change Password</h1>
-        <form action="" class="action-input-form" method="post">
-              <input
-                type="text"
-                name="CurrentPassword"
-                class="action-input"
-                placeholder="Current password"
-              />
-              <input
-                type="text"
-                name="NewPassword"
-                class="action-input"
-                placeholder="New pin"
-              />
-
-               <button type="submit" class="submit-details-btn">
-                <p class="submit-btn-txt">Submit</p>
-              </button>
-                     
-        </form>
-        
-      </div>
-
-    </section>
-
-    <section class="settings-main page">
-      <div class="settings-parent-container">
-
-
-        <div class="settings-box">
-
-          <div class="section-heading-container">
-            <h1 class="section-heading-txt">Personal Information</h1>
+                <p class="numerical-digits">0.00</p>
+              </div>
+              <div class="more-options-container">
+                <p class="more-options-txt">Withdraw</p>
+              </div>
+            </div>
           </div>
+
+          <div class="box">
+            <div class="box-content-container">
+              <div class="box-heading-container">
+                <p class="box-heading-texts">Referral Count</p>
+              </div>
+
+              <div class="referral-container-image">
+                <div class="box-sample-image-contanier">
+                  <img src="../images/referral-count-icon.png" class="box-sample-image" />
+                </div>
+
+                <p class="numerical-digits">0</p>
+              </div>
+              <div class="more-options-container">
+                <p class="more-options-txt">View</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="referral-options-container">
+        <div class="box">
+          <div class="referral-options-container-content">
+            <div class="box-heading-container">
+              <p class="box-heading-texts">Referral link</p>
+            </div>
+
+            <div class="referral-method-txt-container">
+              <p class="referral-method-txt refLink">
+                https://locahost:3000<%= currentUser.referral_code%>
+              </p>
+            </div>
+
+            <div class="more-options-container">
+              <p class="more-options-txt copyLink">Copy</p>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="referral-options-container-content">
+            <div class="box-heading-container">
+              <p class="box-heading-texts">Referral Code</p>
+            </div>
+
+            <div class="referral-method-txt-container">
+              <p class="referral-method-txt refCode">
+                <%= currentUser.referral_code%>
+              </p>
+            </div>
+
+            <div class="more-options-container">
+              <p class="more-options-txt copyCode">Copy</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="referral-options-container-content">
+            <div class="box-heading-container">
+              <p class="box-heading-texts">Invite Contacts</p>
+            </div>
+
+            <div class="referral-method-txt-container">
+              <p class="referral-method-txt inviteContactsTxt">
+                Join me at white core, referral code: <%=
+                  currentUser.referral_code%>
+              </p>
+            </div>
+
+            <div class="more-options-container">
+              <p class="more-options-txt copyInviteTxtBtn">Copy</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="leadership-board-container">
+        <div class="leadershipboard-box"></div>
+      </section>
+    </div>
+  </section>
+
+  <section class="action-container">
+    <p class="exit-btn"> X </p>
+    <div class="action-content-container withdraw">
+      <h1 class="section-heading-txt">Ready for a pay check?</h1>
+      <p class="micro-heading-txt">Available bal: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
+      <form action="" class="action-input-form" method="post">
+        <input type="text" name="withrawal-amount" class="action-input" placeholder="Amount" />
+
+        <button type="submit" class="submit-details-btn">
+          <p class="submit-btn-txt">Submit</p>
+        </button>
+
+      </form>
+      <p class="sub-txt">
+        Withdral treshold: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> 4000</span>.
+      </p>
+    </div>
+    <div class="action-content-container referral-table">
+      <h1 class="section-heading-txt">This table shows your number of referrals</h1>
+      <p class="micro-heading-txt">Referral count: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
+      <div class="referral-table-container">
+        <div class="ref-table-headings">
+          <p class="sub-txt">Username</p>
+          <p class="sub-txt">Tier-plan</p>
+          <p class="sub-txt">Acc_status</p>
+          <p class="sub-txt">earnings</p>
+        </div>
+        <div class="referral-table"></div>
+      </div>
+    </div>
+    <div class="action-content-container change-username">
+      <h1 class="section-heading-txt">Change Username</h1>
+      <form action="" class="action-input-form" method="post">
+        <input type="text" name="withrawal-amount" class="action-input" placeholder="<%= currentUser.username%>" />
+
+        <button type="submit" class="submit-details-btn">
+          <p class="submit-btn-txt">Submit</p>
+        </button>
+
+      </form>
+      <p class="sub-txt">
+        Username checker: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> Avaiable</span>.
+      </p>
+    </div>
+
+    <div class="action-content-container change-display">
+      <h1 class="section-heading-txt">Change Display Name</h1>
+      <form action="" class="action-input-form" method="post">
+        <input type="text" name="withrawal-amount" class="action-input" placeholder="<%= currentUser.username%>" />
+
+        <button type="submit" class="submit-details-btn">
+          <p class="submit-btn-txt">Submit</p>
+        </button>
+
+      </form>
+
+    </div>
+    <div class="action-content-container change-password">
+      <h1 class="section-heading-txt">Change Password</h1>
+      <form action="" class="action-input-form" method="post">
+        <input type="text" name="CurrentPassword" class="action-input" placeholder="Current password" />
+        <input type="text" name="NewPassword" class="action-input" placeholder="New password" />
+
+        <button type="submit" class="submit-details-btn">
+          <p class="submit-btn-txt">Submit</p>
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="action-content-container update-withdrawal-account">
+      <h1 class="section-heading-txt">Change Password</h1>
+      <form action="" class="action-input-form update-withdrawal-account-form" method="post">
+        <input type="text" name="CurrentPassword" class="action-input update-withdrawal-account-input" placeholder="Current password" />
+        <input type="text" name="WithdrawalAccountNumber" class="action-input update-withdrawal-account-input" placeholder="Account Number" />
+
+        <input type="text" name="WithdrawalAccountName" class="action-input update-withdrawal-account-input" placeholder="Account Name" />
+        <input type="text" name="WithdrawalAccountBankName" class="action-input update-withdrawal-account-input" placeholder="Bank Name" />
+        <button type="submit" class="submit-details-btn">
+          <p class="submit-btn-txt">Submit</p>
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="action-content-container update-pin">
+      <h1 class="section-heading-txt">Change Password</h1>
+      <form action="" class="action-input-form" method="post">
+        <input type="text" name="CurrentPassword" class="action-input" placeholder="Current password" />
+        <input type="text" name="NewPassword" class="action-input" placeholder="New pin" />
+
+        <button type="submit" class="submit-details-btn">
+          <p class="submit-btn-txt">Submit</p>
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <section class="settings-main page">
+    <div class="settings-parent-container">
+
+
+      <div class="settings-box">
+
+        <div class="section-heading-container">
+          <h1 class="section-heading-txt">Personal Information</h1>
+        </div>
 
         <div class="personal-info-parent-container">
           <div class="personal-info-content">
-              <div class="personal-info-row">
-                <div class="info-box">
-                  <div class="info-heading-container">
-                    <p class="info-heading">Username</p>
-                  </div>
-                  <div class="info-text-container">
-                    <p class="info-text"><%= currentUser.username%></p>
-                  </div>
-                  <div class="change-container modify">
-                    <p class="change-text">Change</p>
-                  </div>
+            <div class="personal-info-row">
+              <div class="info-box">
+                <div class="info-heading-container">
+                  <p class="info-heading">Username</p>
                 </div>
-                <div class="info-box">
-                  <div class="info-heading-container">
-                    <p class="info-heading">Display name</p>
-                  </div>
-                  <div class="info-text-container">
-                    <p class="info-text"><%= currentUser.username%></p>
-                  </div>
-                  <div class="change-container-personal-information modify">
-                    <p class="change-text">Change</p>
-                  </div>
+                <div class="info-text-container">
+                  <p class="info-text"><%= currentUser.username%></p>
+                </div>
+                <div class="change-container modify">
+                  <p class="change-text">Change</p>
                 </div>
               </div>
-              <div class="personal-info-row">
-                <div class="info-box">
-                  <p class="info-heading">Tier Plan</p>
-                  <p class="info-text"><%= currentUser.tier_plan%></p>
+              <div class="info-box">
+                <div class="info-heading-container">
+                  <p class="info-heading">Display name</p>
                 </div>
-               
-              </div>
-
-          </div>
-
-                   <div class="tier-plan-parent-container">
-               <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
-               <p class="tier-badge">★</p>
-                  <div class="tier-upgrade-container">
-                <p class="tier-upgrade-text">Upgrade</p>
-              </div>
-                 <% } else if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
-                <p class="tier-badge silver">♛</p>
-                   <% } %>
+                <div class="info-text-container">
+                  <p class="info-text"><%= currentUser.username%></p>
                 </div>
-        </div>
-
-
-
-        </div>
-
-        <div class="settings-box">
-          
-          <div class="section-heading-container">
-            <h1 class="section-heading-txt">Account settings</h1>
-          </div>
-          <div class="account-settings-content-container">
-
-              <div class="account-settings change-password-container modify">
-                <p class="settings-text">Change Password</p>
+                <div class="change-container-personal-information modify">
+                  <p class="change-text">Change</p>
+                </div>
               </div>
-              <div class="account-settings update-withdrawal-account-container modify">
-                <p class="settings-text">Update Withdrawal account</p>
-              </div>
-              <div class="account-settings change-pin-container modify">
-                <p class="settings-text">Change Withdrawal Pin</p>
-              </div>
-    
-            
-          </div>
-        </div>
-        <div class="settings-box">
-
-          <div class="section-heading-container">
-            <h1 class="section-heading-txt">Session</h1>
-          </div>
-          <div class="session-content-container">
-            <div class="session-setting-container">
-              <p class="session-setting-txt">Activity</p>
             </div>
-            <div class="session-setting-container">
-              <p class="session-setting-txt logout-txt">Log out</p>
+            <div class="personal-info-row">
+              <div class="info-box">
+                <p class="info-heading">Tier Plan</p>
+                <p class="info-text"><%= currentUser.tier_plan%></p>
+              </div>
+
             </div>
+
+          </div>
+
+          <div class="tier-plan-parent-container">
+            <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
+            <p class="tier-badge">★</p>
+            <div class="tier-upgrade-container">
+              <p class="tier-upgrade-text">Upgrade</p>
+            </div>
+            <% } else if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
+            <p class="tier-badge silver">♛</p>
+            <% } %>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="settings-box">
+
+        <div class="section-heading-container">
+          <h1 class="section-heading-txt">Account settings</h1>
+        </div>
+        <div class="account-settings-content-container">
+
+          <div class="account-settings change-password-container modify">
+            <p class="settings-text">Change Password</p>
+          </div>
+          <div class="account-settings update-withdrawal-account-container modify">
+            <p class="settings-text">Update Withdrawal account</p>
+          </div>
+          <div class="account-settings change-pin-container modify">
+            <p class="settings-text">Change Withdrawal Pin</p>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="settings-box">
+
+        <div class="section-heading-container">
+          <h1 class="section-heading-txt">Session</h1>
+        </div>
+        <div class="session-content-container">
+          <div class="session-setting-container">
+            <p class="session-setting-txt">Activity</p>
+          </div>
+          <div class="session-setting-container">
+            <p class="session-setting-txt logout-txt">Log out</p>
           </div>
         </div>
       </div>
+    </div>
 
-        
-      
-    </section>
-    
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/user-page.js"></script>
-  </body>
+
+  </section>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="js/user-page.js"></script>
+</body>
+
 </html>
