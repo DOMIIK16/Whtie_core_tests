@@ -479,6 +479,7 @@ body {
 }
 .info-box {
   width: 40%;
+  padding: 0 0 10px;
   background-color: black;
   border-radius: 20px;
   border: 1px solid rgba(214, 194, 158, 0.25);
@@ -516,31 +517,23 @@ body {
   gap: 1rem;
 }
 
-.change-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 25%;
+.change-container-personal-information {
 }
 
-.change-text,
-.update-text,
-.tier-upgrade-text {
-  color: #b8a98f;
-  background-color: #120b08;
-  padding: 1px 10px 1px 10px;
+.change-text {
+  border: 1px solid rgba(184, 135, 70, 0.22);
   border-radius: 20px;
+  padding: 7px 15px;
+  color: #b8a98f;
   font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
-  text-align: center;
-  border: 1px solid rgba(214, 194, 158, 0.25);
+  white-space: nowrap;
+  margin: 0;
+  transition: all 0.3s ease;
 }
-.change-text:hover,
-.update-text:hover,
-.tier-upgrade-text:hover {
+
+.change-text:hover {
+  background-color: #1b263b;
   cursor: pointer;
-  background-color: #080808;
-  transition: background-color 0.3s ease;
 }
 .profile-picture-parent-container {
   display: flex;
@@ -625,6 +618,7 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
+
 .session-content-container {
   width: 90%;
   height: 70%;
@@ -632,186 +626,37 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.session-setting {
-  width: 25%;
-  height: 30%;
+
+.session-setting-txt {
   background-color: #000000;
-  border: 1px solid rgba(214, 194, 158, 0.25);
+  border: 1px solid rgba(184, 135, 70, 0.22);
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 7px 15px;
+  color: #b8a98f;
+  font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
+  white-space: nowrap;
+  margin: 0;
+  transition: all 0.3s ease;
 }
-.session-setting:hover {
-  background: #080808;
+
+.session-setting-txt:hover {
+  background-color: #1b263b;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
-.delete-account-container {
-  width: 25%;
-  height: 30%;
-  background-color: #000000;
+
+.session-setting-txt.logout-txt {
+  background-color: rgba(184, 74, 74, 0.15);
   border: 1px solid rgba(180, 70, 70, 0.45);
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.delete-account-container:hover {
-  background: #2a0d0d;
-  cursor: pointer;
-  border-color: #b84a4a;
-  box-shadow: 0 0 15px rgba(184, 74, 74, 0.15);
-  transition:
-    box-shadow 0.3s ease,
-    background-color 0.3s ease,
-    border-color 0.3s ease;
-}
-.delete-account-text {
-  color: #c98f8f;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: bold;
-  text-align: center;
-}
-.logout-text {
+  padding: 9px 18px;
   color: #b8a98f;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: bold;
-  text-align: center;
+  font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
+  white-space: nowrap;
+  margin: 0;
+  transition: all 0.3s ease;
 }
-.pop-up {
-  display: none;
-}
-.pop-up.active {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  z-index: 3;
-  position: absolute;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-}
-.x-container {
-  display: flex;
-  width: 50px;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: #120b08;
-  border-radius: 50px;
-  align-self: flex-end;
-}
-.x-text {
-  color: #b8a98f;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: bold;
-  text-align: center;
-  font-size: larger;
-}
-.x-container:hover {
-  background-color: #080808;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-.change-settings-parent-container {
-  width: 35%;
-  height: 400px;
-  margin-top: 10%;
-  background: #080808;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.change-settings-content-container {
-  width: 90%;
-  height: 80%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-.change-setting-container {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.place-holder-text-container {
-  border-color: rgba(214, 194, 158, 0.25);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 10px;
-  height: 53px;
-  width: 65%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #080808;
-  color: #807665;
-}
-
-.place-holder-title {
-  color: #b8a98f;
-  font-family: "Cormorant Garamond", serif;
-  font-weight: bold;
-  text-align: center;
-}
-.place-holder-text-container {
-  border-color: rgba(214, 194, 158, 0.25);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 10px;
-  width: 65%;
-  display: flex;
-  justify-content: center;
-}
-.place-holder-text {
-  color: #807665;
-}
-.new-change-container {
-  border-color: rgba(214, 194, 158, 0.25);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 10px;
-  height: 53px;
-  width: 65%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #080808;
-  color: #807665;
-}
-.new-change-container:focus {
-  background: transparent;
-  outline: none;
-}
-.submit-container {
-  background-color: #120b08;
-  border-color: rgba(214, 194, 158, 0.25);
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 10px;
-  width: 30%;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.submit-text {
-  color: #b88746;
-}
-.submit-container:hover {
-  background-color: #080808;
-  transition: background-color 0.3s ease;
+.session-setting-txt.logout-txt:hover {
+  background-color: #2a0d0d;
   cursor: pointer;
 }
 
@@ -867,8 +712,17 @@ body {
   overflow: hidden;
 }
 
+.action-content-container.Update-withdrawal-account {
+  flex-wrap: wrap;
+}
+
 .withdraw.show,
-.referral-table.show {
+.referral-table.show,
+.change-username.show,
+.change-display.show,
+.change-password.show,
+.update-withdrawal-account.show,
+.update-pin.show {
   display: flex;
 }
 
@@ -901,6 +755,10 @@ body {
   gap: 2rem;
 }
 
+.action-input-form.update-withdrawal-account-form {
+  flex-wrap: wrap;
+}
+
 .action-input {
   background: black;
   border: 1px solid rgba(184, 135, 70, 0.28);
@@ -914,6 +772,10 @@ body {
   align-items: center;
   justify-content: space-around;
   color: white;
+}
+
+.action-input.update-withdrawal-account-input {
+  padding: 10px 35px;
 }
 .action-input:hover {
   border-color: rgba(184, 135, 70, 0.65);

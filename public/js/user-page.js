@@ -25,10 +25,10 @@ pageOptions.forEach((option, index) => {
   });
 });
 
-var moreOptions = document.querySelectorAll(".more-options-container");
-var actionContainer = document.querySelector(".action-container");
-var exitBtn = document.querySelector(".exit-btn");
-var actionContents = document.querySelectorAll(".action-content-container");
+const moreOptions = document.querySelectorAll(".more-options-container");
+const actionContainer = document.querySelector(".action-container");
+const exitBtn = document.querySelector(".exit-btn");
+const actionContents = document.querySelectorAll(".action-content-container");
 const copyLink = document.querySelector(".copyLink");
 const linkTxt = document.querySelector(".refLink").textContent;
 const copyRefCode = document.querySelector(".copyCode");
@@ -88,6 +88,54 @@ moreOptions.forEach((option, index) => {
         } catch (err) {
           fallbackCopyText(inviteContactsTxt);
         }
+        break;
+    }
+  });
+});
+
+const ModifyBtns = document.querySelectorAll(".modify");
+
+ModifyBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    switch (index) {
+      case 0:
+        actionContainer.classList.add("show");
+        actionContents.forEach((content) => {
+          content.classList.remove("show");
+        });
+        document.querySelector(".change-username").classList.add("show");
+        break;
+      case 1:
+        actionContainer.classList.add("show");
+        actionContents.forEach((content) => {
+          content.classList.remove("show");
+        });
+        document.querySelector(".change-display").classList.add("show");
+        break;
+      case 2:
+        actionContainer.classList.add("show");
+        actionContents.forEach((content) => {
+          content.classList.remove("show");
+        });
+        document.querySelector(".change-password").classList.add("show");
+        break;
+
+      case 3:
+        actionContainer.classList.add("show");
+        actionContents.forEach((content) => {
+          content.classList.remove("show");
+        });
+        document
+          .querySelector(".update-withdrawal-account")
+          .classList.add("show");
+        break;
+      case 4:
+        actionContainer.classList.add("show");
+        actionContents.forEach((content) => {
+          content.classList.remove("show");
+        });
+        document.querySelector(".update-pin").classList.add("show");
+
         break;
     }
   });

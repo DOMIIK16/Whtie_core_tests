@@ -221,6 +221,127 @@
           <div class="referral-table"></div>
         </div>
       </div>
+          <div class="action-content-container change-username">
+        <h1 class="section-heading-txt">Change Username</h1>
+        <form action="" class="action-input-form" method="post">
+              <input
+                type="text"
+                name="withrawal-amount"
+                class="action-input"
+                placeholder="<%= currentUser.username%>"
+              />
+
+               <button type="submit" class="submit-details-btn">
+                <p class="submit-btn-txt">Submit</p>
+              </button>
+                     
+        </form>
+        <p class="sub-txt">
+          Username checker: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> Avaiable</span>.
+        </p>
+      </div>
+
+       <div class="action-content-container change-display">
+        <h1 class="section-heading-txt">Change Display Name</h1>
+        <form action="" class="action-input-form" method="post">
+              <input
+                type="text"
+                name="withrawal-amount"
+                class="action-input"
+                placeholder="<%= currentUser.username%>"
+              />
+
+               <button type="submit" class="submit-details-btn">
+                <p class="submit-btn-txt">Submit</p>
+              </button>
+                     
+        </form>
+        
+      </div>
+      <div class="action-content-container change-password">
+        <h1 class="section-heading-txt">Change Password</h1>
+        <form action="" class="action-input-form" method="post">
+              <input
+                type="text"
+                name="CurrentPassword"
+                class="action-input"
+                placeholder="Current password"
+              />
+              <input
+                type="text"
+                name="NewPassword"
+                class="action-input"
+                placeholder="New password"
+              />
+
+               <button type="submit" class="submit-details-btn">
+                <p class="submit-btn-txt">Submit</p>
+              </button>
+                     
+        </form>
+        
+      </div>
+
+      <div class="action-content-container update-withdrawal-account">
+        <h1 class="section-heading-txt">Change Password</h1>
+        <form action="" class="action-input-form update-withdrawal-account-form" method="post">
+              <input
+                type="text"
+                name="CurrentPassword"
+                class="action-input update-withdrawal-account-input"
+                placeholder="Current password"
+              />
+              <input
+                type="text"
+                name="WithdrawalAccountNumber"
+                class="action-input update-withdrawal-account-input"
+                placeholder="Account Number"
+              />
+
+              <input
+                type="text"
+                name="WithdrawalAccountName"
+                class="action-input update-withdrawal-account-input"
+                placeholder="Account Name"
+              />
+              <input
+                type="text"
+                name="WithdrawalAccountBankName"
+                class="action-input update-withdrawal-account-input"
+                placeholder="Bank Name"
+              />
+               <button type="submit" class="submit-details-btn">
+                <p class="submit-btn-txt">Submit</p>
+              </button>
+                     
+        </form>
+        
+      </div>
+
+      <div class="action-content-container update-pin">
+        <h1 class="section-heading-txt">Change Password</h1>
+        <form action="" class="action-input-form" method="post">
+              <input
+                type="text"
+                name="CurrentPassword"
+                class="action-input"
+                placeholder="Current password"
+              />
+              <input
+                type="text"
+                name="NewPassword"
+                class="action-input"
+                placeholder="New pin"
+              />
+
+               <button type="submit" class="submit-details-btn">
+                <p class="submit-btn-txt">Submit</p>
+              </button>
+                     
+        </form>
+        
+      </div>
+
     </section>
 
     <section class="settings-main page">
@@ -233,8 +354,8 @@
             <h1 class="section-heading-txt">Personal Information</h1>
           </div>
 
-<div class="personal-info-parent-container">
-        <div class="personal-info-content">
+        <div class="personal-info-parent-container">
+          <div class="personal-info-content">
               <div class="personal-info-row">
                 <div class="info-box">
                   <div class="info-heading-container">
@@ -249,12 +370,12 @@
                 </div>
                 <div class="info-box">
                   <div class="info-heading-container">
-                    <p class="info-heading">Email</p>
+                    <p class="info-heading">Display name</p>
                   </div>
                   <div class="info-text-container">
-                    <p class="info-text"><%= currentUser.email%></p>
+                    <p class="info-text"><%= currentUser.username%></p>
                   </div>
-                  <div class="change-container modify">
+                  <div class="change-container-personal-information modify">
                     <p class="change-text">Change</p>
                   </div>
                 </div>
@@ -272,7 +393,7 @@
                    <div class="tier-plan-parent-container">
                <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
                <p class="tier-badge">★</p>
-                  <div class="tier-upgrade-container modify">
+                  <div class="tier-upgrade-container">
                 <p class="tier-upgrade-text">Upgrade</p>
               </div>
                  <% } else if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
@@ -280,6 +401,8 @@
                    <% } %>
                 </div>
         </div>
+
+
 
         </div>
 
@@ -290,14 +413,14 @@
           </div>
           <div class="account-settings-content-container">
 
-              <div class="account-settings change-password-container">
+              <div class="account-settings change-password-container modify">
                 <p class="settings-text">Change Password</p>
               </div>
-              <div class="account-settings update-withdrawal-account-container">
+              <div class="account-settings update-withdrawal-account-container modify">
                 <p class="settings-text">Update Withdrawal account</p>
               </div>
-              <div class="account-settings change-pin-container">
-                <p class="settings-text">Change Pin</p>
+              <div class="account-settings change-pin-container modify">
+                <p class="settings-text">Change Withdrawal Pin</p>
               </div>
     
             
@@ -309,36 +432,18 @@
             <h1 class="section-heading-txt">Session</h1>
           </div>
           <div class="session-content-container">
-            <div class="session-setting">
-              <p class="logout-text">Logout</p>
+            <div class="session-setting-container">
+              <p class="session-setting-txt">Activity</p>
             </div>
-            <div class="delete-account-container">
-              <p class="delete-account-text">Delete Account</p>
+            <div class="session-setting-container">
+              <p class="session-setting-txt logout-txt">Log out</p>
             </div>
           </div>
         </div>
       </div>
-      <section class="change-settings-container pop-up">
-        <div class="change-settings-parent-container">
-          <div class="change-settings-content-container">
-            <div class="x-container">
-              <p class="x-text">X</p>
-            </div>
-            <div class="change-setting-container">
-              <div class="place-holder-text-container">Ikwuka Dominion</div>
-              <div class="new-change-container" contenteditable="true">
-                Username
-              </div>
-              <div class="new-change-container" contenteditable="true">
-                Confirm username
-              </div>
-              <div class="submit-container">
-                <p class="submit-text">Submit</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
+        
+      
     </section>
     
 
