@@ -93,11 +93,9 @@ body {
 
 .get-paid-to-txt {
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
-  letter-spacing: 2px;
-  font-family: "Cormorant Garamond", serif;
-  color: white;
-  font-weight: bold;
-  background-color: #120b08;
+  font-family: "Teachers", sans-serif;
+  /* color: white; */
+  background-color: #b8a98f;
   border-radius: 25px;
   padding: 10px 20px;
   border: 1px solid rgba(214, 194, 158, 0.25);
@@ -119,7 +117,6 @@ body {
 }
 
 .get-started-btn {
-  background-color: #120b08;
   border: 1px solid rgba(214, 194, 158, 0.25);
   border-radius: 20px;
   display: flex;
@@ -130,7 +127,7 @@ body {
 }
 
 .get-started-btn:hover {
-  background-color: #080808;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .get-started-btn:active {
@@ -139,10 +136,10 @@ body {
 
 .get-started-btn-txt {
   margin: 0;
-  padding: 10px 20px;
+  padding: 5px 8px;
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
   font-family: "Cormorant Garamond", serif;
-  color: white;
+  /* color: #b8a98f; */
   font-weight: bold;
 }
 
@@ -155,18 +152,17 @@ body {
 }
 
 .powered-by-container {
-  background: radial-gradient(circle, #1b263b 0%, #6b4c32 55%, #1f150c 100%);
+  background-color: #000000;
   display: flex;
   align-items: center;
   border: 1px solid rgba(214, 194, 158, 0.25);
   border-radius: 20px;
-  font-family: "Teachers", sans-serif;
 }
 
 .powered-by-txt {
-  color: #cacaca;
-  background-color: #120b08;
-  padding: 9px 18px;
+  font-family: "Teachers", sans-serif;
+  background-color: #b8a98f;
+  padding: 5px 8px;
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
   border-radius: 50px;
   display: flex;
@@ -175,13 +171,13 @@ body {
 }
 
 .company-name {
-  padding: 4px 14px;
+  padding: 2px 14px;
   font-size: clamp(16px, 1.25vw + 0.85rem, 18px);
   font-weight: bold;
   font-family: "Charm", cursive;
   font-weight: 1000;
   font-style: normal;
-  color: #b88746;
+  color: white;
 }
 
 .hero-section-images-container {

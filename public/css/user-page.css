@@ -114,35 +114,18 @@ body {
 .side-pane {
   width: 300px;
   height: 300px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background-color: #000000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   position: absolute;
-  display: none; /* Keeps original layout toggle */
+  display: none;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  z-index: 2;
-  margin: 10px;
-}
-
-.user-logout-pane {
-  width: 300px;
-  height: 30%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  position: absolute;
-  display: none; /* Keeps original layout toggle */
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  z-index: 3;
-  margin: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom-right-radius: 10px;
+  z-index: 10;
 }
 
 .drop-pressed {
@@ -153,17 +136,16 @@ body {
 .option {
   width: 60%;
   background-color: #080808;
-  border-color: rgba(214, 194, 158, 0.25);
-  border-width: 1px;
-  border-style: solid;
+  border: 1px solid rgba(184, 135, 70, 0.22);
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  transition: all 1s ease;
 }
 
-.option-text {
+.option-txt {
   font-family: "Teachers", sans-serif;
   color: #b8a98f;
   font-size: clamp(13px, 1.1vw + 0.9rem, 15px);
@@ -172,26 +154,8 @@ body {
 }
 
 .option:hover {
-  background-color: #120b08;
-  transition: background-color 1s ease;
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
-}
-
-.option-pressed {
-  background-color: #120b08;
-}
-
-.option-sample-image {
-  width: 25%;
-  height: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.option-img {
-  max-width: 100%;
-  height: auto;
 }
 
 .dashboard-section {
@@ -289,14 +253,6 @@ body {
   line-height: 1.4;
 }
 
-.free-texts-1 {
-  font-family: "Teachers", sans-serif;
-  color: #e1dcc9;
-  letter-spacing: 1px;
-  padding: 5px;
-  margin: 0;
-}
-
 .span-texts {
   font-family: "Teachers", sans-serif;
   color: #b88746;
@@ -373,10 +329,11 @@ body {
 }
 
 .more-options-txt {
+  background-color: white;
   border: 1px solid rgba(184, 135, 70, 0.22);
   border-radius: 20px;
   padding: 7px 15px;
-  color: #b8a98f;
+  /* color: #b8a98f; */
   font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
   white-space: nowrap;
   margin: 0;
@@ -384,7 +341,7 @@ body {
 }
 
 .more-options-txt:hover {
-  background-color: #1b263b;
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
@@ -637,7 +594,7 @@ body {
 }
 
 .session-setting-txt:hover {
-  background-color: #1b263b;
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
@@ -668,6 +625,8 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .action-container.show {
@@ -676,8 +635,6 @@ body {
 }
 
 .exit-btn {
-  background-color: #080808;
-  border: 1px rgba(214, 194, 158, 0.25) solid;
   border-radius: 50%;
   padding: 10px 15px;
   margin: 0;
@@ -691,7 +648,7 @@ body {
 }
 
 .exit-btn:hover {
-  background-color: #1b263b;
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
@@ -707,6 +664,7 @@ body {
   justify-content: center;
   gap: 2rem;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .action-content-container.Update-withdrawal-account {
@@ -761,9 +719,7 @@ body {
   border: 1px solid rgba(184, 135, 70, 0.28);
   border-radius: 10px;
   overflow: hidden;
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -783,24 +739,23 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #120b08;
+  background-color: #000000;
   border: 1px solid rgba(214, 194, 158, 0.25);
-  border-radius: 20px;
+  border-radius: 10px;
   transition: all 0.5s ease;
-  width: 20%;
 }
 
 .submit-details-btn:hover {
-  background-color: #080808;
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
 .submit-btn-txt {
   margin: 0;
-  padding: 6px 10px;
+  padding: 4px 7px;
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
   font-family: "Cormorant Garamond", serif;
-  color: #b88746;
+  color: #b8a98f;
   font-weight: bold;
 }
 
