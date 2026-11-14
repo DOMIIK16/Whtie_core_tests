@@ -75,7 +75,7 @@
 
               <div class="bal-image-container">
                 <div class="box-sample-image-contanier">
-                  <img src="../images/earnings-icon.png" class="box-sample-image" />
+                  <img src="/images/earnings-icon.png" class="box-sample-image" />
                 </div>
 
                 <p class="numerical-digits">0.00</p>
@@ -94,13 +94,13 @@
 
               <div class="referral-container-image">
                 <div class="box-sample-image-contanier">
-                  <img src="../images/referral-count-icon.png" class="box-sample-image" />
+                  <img src="/images/referral-count-icon.png" class="box-sample-image" />
                 </div>
 
                 <p class="numerical-digits">0</p>
               </div>
-              <div class="more-options-container">
-                <p class="more-options-txt">View</p>
+              <div class="referral-table-btn">
+                <a class="more-options-txt" href="#referral-table-section">View referrals</a>
               </div>
             </div>
           </div>
@@ -163,14 +163,57 @@
         </div>
       </section>
 
-      <section class="leadership-board-container">
-        <div class="leadershipboard-box"></div>
+
+      <section class="leadership-board-section">
+        <div class="leadershipboard-box">
+          <p class="header-text">Coming soon!!</p>
+        </div>
       </section>
+
+      <section class="referral-table-section" id="referral-table-section">
+        <div class="referral-table-container">
+          <h1 class="section-heading-txt referral-table-heading">This table shows your number of referrals</h1>
+          <p class="micro-heading-txt">Referral count: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
+          <% if (locals.users) { %>
+          <div class="referral-table">
+
+            <table>
+              <thead class="ref-table-headings">
+                <tr>
+                  <th class="sub-txt">Username</th>
+                  <th class="sub-txt">Tier-plan</th>
+                  <th class="sub-txt">Acc_status</th>
+                  <th class="sub-txt">earnings</th>
+                </tr>
+              </thead>
+              <tbody class="referral-table-contents">
+                <% users.forEach((element) => { %>
+                <tr class="data-row">
+                  <td class="sub-txt"><%= element.username%></td>
+                  <td class="sub-txt"><%= element.tier_plan%></td>
+                  <td class="sub-txt"><%= element.referral_code%></td>
+                  <td class="sub-txt"><%= element.email%></td>
+                </tr>
+                <%  }) %>
+              </tbody>
+            </table>
+
+          </div>
+          <% } else { %>
+          <p class="box-heading-texts">No referrals! Refer friends. </p>
+          <% } %>
+        </div>
+      </section>
+
+
+
     </div>
   </section>
 
   <section class="action-container">
     <p class="exit-btn"> X </p>
+
+
     <div class="action-content-container withdraw">
       <h1 class="section-heading-txt">Ready for a pay check?</h1>
       <p class="micro-heading-txt">Available bal: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
@@ -186,19 +229,7 @@
         Withdral treshold: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> 4000</span>.
       </p>
     </div>
-    <div class="action-content-container referral-table">
-      <h1 class="section-heading-txt">This table shows your number of referrals</h1>
-      <p class="micro-heading-txt">Referral count: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);">0. </span> </p>
-      <div class="referral-table-container">
-        <div class="ref-table-headings">
-          <p class="sub-txt">Username</p>
-          <p class="sub-txt">Tier-plan</p>
-          <p class="sub-txt">Acc_status</p>
-          <p class="sub-txt">earnings</p>
-        </div>
-        <div class="referral-table"></div>
-      </div>
-    </div>
+
     <div class="action-content-container change-username">
       <h1 class="section-heading-txt">Change Username</h1>
       <form action="" class="action-input-form" method="post">
@@ -241,7 +272,7 @@
     </div>
 
     <div class="action-content-container update-withdrawal-account">
-      <h1 class="section-heading-txt">Change Password</h1>
+      <h1 class="section-heading-txt">Update withdrawal account</h1>
       <form action="" class="action-input-form update-withdrawal-account-form" method="post">
         <input type="text" name="CurrentPassword" class="action-input update-withdrawal-account-input" placeholder="Current password" />
         <input type="text" name="WithdrawalAccountNumber" class="action-input update-withdrawal-account-input" placeholder="Account Number" />
@@ -257,7 +288,7 @@
     </div>
 
     <div class="action-content-container update-pin">
-      <h1 class="section-heading-txt">Change Password</h1>
+      <h1 class="section-heading-txt">Change pin</h1>
       <form action="" class="action-input-form" method="post">
         <input type="text" name="CurrentPassword" class="action-input" placeholder="Current password" />
         <input type="text" name="NewPassword" class="action-input" placeholder="New pin" />
@@ -269,6 +300,26 @@
       </form>
 
     </div>
+
+    <div class="action-content-container upgrade-tier-plan">
+      <h1 class="section-heading-txt">Upgrade tier plan</h1>
+      <p class="micro-heading-txt"> Current tier: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> <%= currentUser.tier_plan%>. </span> </p>
+      <div class="tier-upgrade-container">
+        <div class="tier-upgrade-price-container">
+          <p class="tier-upgrade-price-txt">4000</p>
+        </div>
+        <div type="submit" class="submit-details-btn tier-upgrade-payment-btn">
+          <p class="tier-payment-btn-txt">Pay</p>
+        </div>
+      </div>
+
+
+      <p class="sub-txt">
+        Available tier: <span class="numerical-digits" style="font-size: clamp(11px, 0.8vw + 0.6rem, 13px);"> Silver</span>.
+      </p>
+    </div>
+
+
 
   </section>
 
@@ -322,7 +373,7 @@
           <div class="tier-plan-parent-container">
             <% if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'member') { %>
             <p class="tier-badge">★</p>
-            <div class="tier-upgrade-container">
+            <div class="tier-upgrade-btn-container upgradeTier">
               <p class="tier-upgrade-text">Upgrade</p>
             </div>
             <% } else if (currentUser.tier_plan && currentUser.tier_plan.toLowerCase().trim() === 'silver') { %>
@@ -362,10 +413,10 @@
         </div>
         <div class="session-content-container">
           <div class="session-setting-container">
-            <p class="session-setting-txt">Activity</p>
+            <p class="session-setting-txt">Delete account</p>
           </div>
           <div class="session-setting-container">
-            <p class="session-setting-txt logout-txt">Log out</p>
+            <p class="session-setting-txt">Log out</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 html {
   scrollbar-color: rgba(255, 255, 255, 0.05) #000000;
-  /* scrollbar-width: thin; */
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  scrollbar-width: thin;
 }
 
 body {
@@ -24,10 +26,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 60px;
 }
 
 .header-content-parent-container {
-  height: 95%;
   width: 95%;
   display: flex;
   justify-content: space-between;
@@ -43,27 +45,12 @@ body {
   color: #e1dcc9;
   font-family: "Cormorant Garamond", serif;
   font-weight: bold;
+  font-size: clamp(15px, 1vw + 0.85rem, 20px);
 }
 
 .white-core-small-icon {
   width: 35px;
   height: 30px;
-}
-
-.user-actions-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  width: 165px;
-  height: 95%;
-  border-radius: 10px;
-}
-
-.user-actions-container:hover {
-  background-color: #080808;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
 }
 
 .heading-sample-image-contanier {
@@ -162,7 +149,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 10px;
+  margin: 10px 0 50px 0;
   width: 95%;
 }
 .page {
@@ -321,7 +308,8 @@ body {
   color: #b88746;
 }
 
-.more-options-container {
+.more-options-container,
+.referral-table-btn {
   width: 40%;
   display: flex;
   justify-content: center;
@@ -333,7 +321,8 @@ body {
   border: 1px solid rgba(184, 135, 70, 0.22);
   border-radius: 20px;
   padding: 7px 15px;
-  /* color: #b8a98f; */
+  text-decoration: none;
+  color: black;
   font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
   white-space: nowrap;
   margin: 0;
@@ -380,19 +369,71 @@ body {
   font-size: clamp(10px, 0.8vw + 0.6rem, 12px);
 }
 
-.leadership-board-container {
-  margin: 10px 0 10px 0;
+.leadership-board-section {
+  margin: 10px 0;
   width: 100%;
 }
 
 .leadershipboard-box {
   width: 100%;
   padding: 200px 0;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #080808;
   border: 1px solid rgba(214, 194, 158, 0.25);
+}
+
+.referral-table-section {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.referral-table-container {
+  width: 100%;
+  padding: 20px 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #080808;
+  border: 1px solid rgba(214, 194, 158, 0.25);
+  gap: 1rem;
+}
+
+.section-heading-txt.referral-table-heading {
+  padding: 0 10px;
+}
+
+.referral-table {
+  width: 90%;
+  overflow: auto;
+  max-height: 400px;
+}
+
+.referral-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.referral-table-container th {
+  border-bottom: 1px solid rgba(214, 194, 158, 0.25);
+}
+
+.referral-table-container th,
+.referral-table-container td {
+  padding: 10px 10px;
+  text-align: left;
+}
+
+.referral-table-contents {
+  width: 1000px;
+}
+
+.data {
+  color: red;
 }
 
 .settings-parent-container {
@@ -474,51 +515,24 @@ body {
   gap: 1rem;
 }
 
-.change-text {
+.change-text,
+.tier-upgrade-text {
+  background-color: white;
   border: 1px solid rgba(184, 135, 70, 0.22);
   border-radius: 20px;
-  padding: 7px 15px;
-  color: #b8a98f;
+  padding: 5px 10px;
   font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
   white-space: nowrap;
   margin: 0;
   transition: all 0.3s ease;
 }
 
-.change-text:hover {
-  background-color: #1b263b;
+.change-text:hover,
+.tier-upgrade-text:hover {
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
-.profile-picture-parent-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 35%;
-}
 
-.user-profile-picture-container {
-  background-color: black;
-  border: 1px solid rgba(214, 194, 158, 0.25);
-  border-radius: 50%;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.user-profile-picture {
-  width: 80%;
-  height: 80%;
-  padding: 5px;
-  border-radius: 50%;
-}
-.update-container,
-.tier-upgrade-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .account-settings-content-container {
   width: 55%;
   display: flex;
@@ -582,23 +596,6 @@ body {
 }
 
 .session-setting-txt {
-  background-color: #000000;
-  border: 1px solid rgba(184, 135, 70, 0.22);
-  border-radius: 20px;
-  padding: 7px 15px;
-  color: #b8a98f;
-  font-size: clamp(11px, 0.8vw + 0.6rem, 13px);
-  white-space: nowrap;
-  margin: 0;
-  transition: all 0.3s ease;
-}
-
-.session-setting-txt:hover {
-  background: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-}
-
-.session-setting-txt.logout-txt {
   background-color: rgba(184, 74, 74, 0.15);
   border: 1px solid rgba(180, 70, 70, 0.45);
   border-radius: 20px;
@@ -609,7 +606,7 @@ body {
   margin: 0;
   transition: all 0.3s ease;
 }
-.session-setting-txt.logout-txt:hover {
+.session-setting-txt:hover {
   background-color: #2a0d0d;
   cursor: pointer;
 }
@@ -677,7 +674,8 @@ body {
 .change-display.show,
 .change-password.show,
 .update-withdrawal-account.show,
-.update-pin.show {
+.update-pin.show,
+.upgrade-tier-plan.show {
   display: flex;
 }
 
@@ -702,9 +700,11 @@ body {
   color: #cacaca;
   font-size: clamp(11px, 1vw + 0.8rem, 13px);
   margin: 0;
+  font-weight: normal;
 }
 
-.action-input-form {
+.action-input-form,
+.tier-upgrade-container {
   width: 100%;
   display: flex;
   gap: 2rem;
@@ -734,6 +734,26 @@ body {
   border-color: rgba(184, 135, 70, 0.65);
 }
 
+.tier-upgrade-price-container {
+  background-color: #000000;
+  border: 1px solid rgba(214, 194, 158, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.tier-upgrade-price-txt {
+  font-family: "Teachers", sans-serif;
+  color: #cacaca;
+  font-size: clamp(11px, 1vw + 0.8rem, 13px);
+  margin: 0;
+  font-weight: normal;
+  padding: 4px 7px;
+}
+
 .submit-details-btn {
   display: flex;
   flex-direction: column;
@@ -745,32 +765,23 @@ body {
   transition: all 0.5s ease;
 }
 
+.submit-details-btn.tier-upgrade-payment-btn {
+  width: 30%;
+}
+
 .submit-details-btn:hover {
   background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
-.submit-btn-txt {
+.submit-btn-txt,
+.tier-payment-btn-txt {
   margin: 0;
   padding: 4px 7px;
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
   font-family: "Cormorant Garamond", serif;
   color: #b8a98f;
   font-weight: bold;
-}
-
-.referral-table-container {
-  height: 150px;
-  padding: 20px 0;
-  width: 522px;
-  background-color: #000000;
-  border-radius: 10px;
-  overflow: auto;
-}
-
-.ref-table-headings {
-  display: flex;
-  justify-content: space-around;
 }
 
 @media (max-width: 498px) {
@@ -793,6 +804,9 @@ body {
   }
   .submit-details-btn {
     width: 40%;
+  }
+  .referral-table {
+    width: 300px;
   }
 }
 

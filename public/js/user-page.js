@@ -49,13 +49,6 @@ moreOptions.forEach((option, index) => {
         document.querySelector(".withdraw").classList.add("show");
         break;
       case 1:
-        actionContainer.classList.add("show");
-        actionContents.forEach((content) => {
-          content.classList.remove("show");
-        });
-        document.querySelector(".referral-table").classList.add("show");
-        break;
-      case 2:
         try {
           await navigator.clipboard.writeText(linkTxt);
           copyLink.textContent = "Copied";
@@ -66,7 +59,7 @@ moreOptions.forEach((option, index) => {
           fallbackCopyText(linkTxt);
         }
         break;
-      case 3:
+      case 2:
         try {
           await navigator.clipboard.writeText(refCodeText);
           copyRefCode.textContent = "Copied";
@@ -78,7 +71,7 @@ moreOptions.forEach((option, index) => {
         }
         break;
 
-      case 4:
+      case 3:
         try {
           await navigator.clipboard.writeText(inviteContactsTxt);
           copyInviteTxtBtn.textContent = "Copied";
@@ -139,6 +132,17 @@ ModifyBtns.forEach((btn, index) => {
         break;
     }
   });
+});
+
+const upgradeTier = document.querySelector(".upgradeTier");
+const upgradeTierDialogueBox = document.querySelector(".upgrade-tier-plan");
+
+upgradeTier.addEventListener("click", () => {
+  actionContainer.classList.add("show");
+  actionContents.forEach((content) => {
+    content.classList.remove("show");
+  });
+  upgradeTierDialogueBox.classList.add("show");
 });
 
 exitBtn.addEventListener("click", () => {

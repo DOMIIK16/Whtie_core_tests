@@ -65,7 +65,7 @@ body {
 
 .section-heading-txt {
   font-family: "Cormorant Garamond", serif;
-  color: #b88746;
+  color: #ffffff;
   letter-spacing: 2px;
   margin: 0;
   font-size: clamp(14px, 1.25vw + 0.85rem, 35px);
@@ -182,23 +182,23 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #120b08;
+  background-color: #000000;
   border: 1px solid rgba(214, 194, 158, 0.25);
-  border-radius: 20px;
+  border-radius: 10px;
   transition: all 0.5s ease;
 }
 
 .submit-details-btn:hover {
-  background-color: #080808;
+  background: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
 .submit-btn-txt {
   margin: 0;
-  padding: 7px 15px;
+  padding: 4px 7px;
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
   font-family: "Cormorant Garamond", serif;
-  color: #b88746;
+  color: #b8a98f;
   font-weight: bold;
 }
 
@@ -212,12 +212,14 @@ body {
 .change-of-action-txt {
   font-family: "Teachers", sans-serif;
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
+  margin: 0;
 }
 
 .change-of-action-link {
   font-family: "Cormorant Garamond", serif;
   text-decoration: none;
   color: #b88746;
+  margin: 0;
 }
 
 .change-of-action-link:hover {
@@ -238,5 +240,9 @@ body {
 @media (max-width: 400px) {
   .user-details-container {
     width: 80%;
+  }
+  .change-of-action-container {
+    flex-wrap: wrap;
+    gap: 0;
   }
 }

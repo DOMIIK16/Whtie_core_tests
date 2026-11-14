@@ -158,6 +158,9 @@ app.get("/user-page", async (req, res) => {
       return res.status(401).redirect("/login");
     }
 
+    const users = await db.query("select * from users");
+    const userRows = users.rows;
+
     const userResult = await db.query(
       `SELECT user_id, email, username, tier_plan, referral_code, created_at 
        FROM users WHERE user_id = $1`,
@@ -168,11 +171,15 @@ app.get("/user-page", async (req, res) => {
     }
     const currentUser = userResult.rows[0];
     console.log(currentUser);
-    res.render("user-page.ejs", { currentUser: currentUser });
+    res.render("user-page.ejs", { currentUser: currentUser, users: userRows });
   } catch (error) {
     console.error(error);
     res.status(500).send("Server error loading dashboard.");
   }
+});
+
+app.get("/feedback", (req, res) => {
+  res.render("feedback-page.ejs");
 });
 
 app.listen(port, () => {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback page</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/feedback-page.css" />
+</head>
+
+<body>
+  <section class="header">
+    <div class="header-content-parent-container">
+      <div class="white-core-heading">
+        <img class="white-core-small-icon drop" src="../images/white-core-small-img.png" alt="White Core Logo" />
+        <h2 class="White-core-heading-text">White Core</h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero-section">
+
+    <div class="feedback-parent-container">
+      <div class="feedback-form-container">
+        <div class="send-us-a-message-txt-container">
+          <h2 class="send-us-a-message-txt">Send us a message</h2>
+        </div>
+        <form action="https://formspree.io/f/xeagezpb" class="feedback-form" method="post">
+          <input type="text" placeholder="Full name" class="feedback-input" name="name" />
+          <input type="text" placeholder="Email" class="feedback-input" name="email" />
+          <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="feedback-txt-area"></textarea>
+          <button type="submit" class="feedback-btn">
+            <p class="feedback-btn-txt">Send</p>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>

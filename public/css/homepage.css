@@ -30,12 +30,14 @@ body {
   z-index: 1000;
   top: 0;
   left: 0;
+  height: 60px;
 }
 
 .header-content-parent-container {
   width: 95%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .white-core-heading {
@@ -48,17 +50,12 @@ body {
   color: white;
   font-family: "Cormorant Garamond", serif;
   font-weight: bold;
+  font-size: clamp(15px, 1vw + 0.85rem, 20px);
 }
 
 .white-core-small-icon {
   width: 35px;
   height: 30px;
-}
-
-.user-actions-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .hero-section {
@@ -268,6 +265,9 @@ body {
   }
   .section-heading-container {
     text-align: center;
+  }
+  .top-get-started-btn {
+    display: none;
   }
 }
 
@@ -540,7 +540,7 @@ body {
 }
 .tier-name {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(20px, 1.8vw + 1rem, 26px);
+  font-size: clamp(15px, 1vw + 0.85rem, 20px);
   font-weight: 600;
   white-space: nowrap;
   margin: 0;
@@ -702,17 +702,17 @@ body {
   color: #b88746;
   font-family: "Cormorant Garamond", serif;
   text-decoration: none;
-  font-size: 17px;
+  font-size: clamp(10px, 1.25vw + 0.85rem, 14px);
 }
 .homepage-link-text:hover {
   color: #412d15;
   transition: color 0.3s ease;
 }
 
-.built-on-trust-text {
+.built-on-trust-txt {
   font-family: "Cormorant Garamond", serif;
   color: #e1dcc9;
-  font-size: 20px;
+  font-size: clamp(10px, 1.25vw + 0.85rem, 14px);
   padding: 0;
 }
 
@@ -732,9 +732,8 @@ body {
 .footer-txt {
   font-family: "Teachers", sans-serif;
   color: white;
-
   margin: 0;
-  font-size: clamp(9px, 1.25vw + 0.85rem, 12px);
+  font-size: clamp(7px, 1vw + 0.75rem, 10px);
 }
 
 @media (max-width: 1000px) {
@@ -743,6 +742,9 @@ body {
   }
 }
 @media (max-width: 600px) {
+  .hero-section {
+    padding: 30px 0;
+  }
   .buttom-container-a-container {
     width: 80%;
     gap: 0.5rem;
