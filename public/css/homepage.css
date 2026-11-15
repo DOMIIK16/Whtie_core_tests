@@ -60,11 +60,10 @@ body {
 
 .hero-section {
   width: 100%;
-  padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 0 50px;
+  height: 100vh;
   background: radial-gradient(
     circle at top,
     rgba(18, 11, 8, 0.95) 0%,
@@ -86,12 +85,12 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  gap: 3rem;
 }
 
 .get-paid-to-txt {
   font-size: clamp(14px, 1.25vw + 0.85rem, 16px);
   font-family: "Teachers", sans-serif;
-  /* color: white; */
   background-color: #b8a98f;
   border-radius: 25px;
   padding: 10px 20px;
@@ -184,51 +183,34 @@ body {
   align-items: center;
 }
 
-.sample-images-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.wallet-image-container {
+.sample-image-container {
   width: 100%;
-  height: 220px;
+  height: 70%;
   display: flex;
-}
-
-.wallet {
-  width: 100%;
-  height: 100%;
   border-radius: 20px;
+  background-size: cover;
+  background-image: url("/images/wallet.png");
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.sample-image-set-2 {
-  display: flex;
-  width: 100%;
-  gap: 1rem;
-  flex: 1;
+.sample-image-container:hover {
+  opacity: 0.6;
 }
 
-.referral-image-container {
-  display: flex;
-  flex: 1.26;
+.sample-image-container:hover .sample-image-txt {
+  opacity: 1;
 }
 
-.referral {
-  width: 100%;
-  height: 220px;
-  border-radius: 20px;
-}
-
-.analysis-image-container {
-  display: flex;
-  flex: 1;
-}
-
-.analysis {
-  width: 100%;
-  height: 220px;
-  border-radius: 20px;
+.sample-image-txt {
+  font-family: "Cormorant Garamond", serif;
+  opacity: 0;
+  color: white;
+  transition: all 0.5s ease;
+  letter-spacing: 1px;
+  font-size: clamp(2.5rem, 3.5vw + 1.5rem, 5.5rem);
+  margin: 5px 0;
 }
 
 @media (max-width: 1000px) {
@@ -239,8 +221,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 50px;
-    gap: 3rem;
+    margin: 50px 0 20px;
+    gap: 1rem;
   }
   .hero-section {
     height: auto;
@@ -252,17 +234,15 @@ body {
   }
   .hero-section-images-container {
     width: 100%;
+    height: 220px;
+  }
+
+  .sample-image-container {
+    height: 85%;
   }
 }
 
 @media (max-width: 400px) {
-  .wallet-image-container {
-    height: 150px;
-  }
-  .referral,
-  .analysis {
-    height: 150px;
-  }
   .section-heading-container {
     text-align: center;
   }
@@ -648,6 +628,9 @@ body {
   margin: 0;
 }
 @media (max-width: 700px) {
+  .start-up-section {
+    padding: 20px 0;
+  }
   .tier-plans-section {
     width: 94%;
     margin: 40px auto;
@@ -743,7 +726,7 @@ body {
 }
 @media (max-width: 600px) {
   .hero-section {
-    padding: 30px 0;
+    padding: 20px 0;
   }
   .buttom-container-a-container {
     width: 80%;
@@ -752,5 +735,16 @@ body {
   .buttom-container-stay-connected-body-txt-container {
     width: 80%;
     text-align: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
