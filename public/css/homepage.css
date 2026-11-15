@@ -688,7 +688,7 @@ body {
   font-size: clamp(10px, 1.25vw + 0.85rem, 14px);
 }
 .homepage-link-text:hover {
-  color: #412d15;
+  color: white;
   transition: color 0.3s ease;
 }
 
