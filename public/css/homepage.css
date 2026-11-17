@@ -303,7 +303,7 @@ body {
   color: white;
   letter-spacing: 2px;
   margin: 0;
-  font-size: clamp(14px, 1.25vw + 0.85rem, 35px);
+  font-size: clamp(17px, 1.5vw + 0.95rem, 39px);
 }
 
 .tier-earnings-txt-spaned {
@@ -433,6 +433,8 @@ body {
 
 .video-container {
   width: 40%;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .video {
