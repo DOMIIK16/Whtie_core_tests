@@ -408,6 +408,53 @@ body {
   }
 }
 
+.white-core-explaination-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.explaination-parent-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.section-txt-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 40%;
+}
+
+.video-container {
+  width: 40%;
+}
+
+.video {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(214, 194, 158, 0.25);
+}
+
+@media (max-width: 700px) {
+  .explaination-parent-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .section-txt-container {
+    width: 80%;
+  }
+  .video-container {
+    width: 80%;
+  }
+}
+
 .tier-plan-details-section {
   padding: 50px 0;
   display: flex;
@@ -646,6 +693,9 @@ body {
 @media (max-width: 480px) {
   .tier-plans-heading {
     margin-bottom: 25px;
+  }
+  .tier-plan-details-section {
+    padding: 0;
   }
 }
 
